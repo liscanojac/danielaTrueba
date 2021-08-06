@@ -1,0 +1,401 @@
+:root {
+    --primary-pink: #F9C4B2;
+    --primary-blue: #092F55;
+    --secondary-blue: #3A78BB;
+    --light-blue: #6D9DC5;
+    --primary-purple: #1E1F2F;    
+    --primary-yellow: #FDEBE9;
+    --secondary-yellow: #FBD4C6;
+    --primary-grey: #EDF2F4;
+    --light-grey: #FCFCFC;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: var(--primary-blue);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.btn-outline-main {
+    border-radius: 0;
+    border-color: var(--secondary-blue);
+    color: var(--secondary-blue);
+    font-size: .84rem;
+}
+
+.btn-outline-main:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn-outline-main::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    background-color: var(--secondary-blue);
+    left: 0;
+    z-index: -1;
+}
+
+.btn-outline-main:hover::after{
+    animation: slideFromLeft .66s ease-in-out;
+    width: 100%;
+}
+
+.sliding-down::after {
+    animation: slideFromRight .66s ease-in-out;
+}
+
+/* Animations */
+
+@keyframes slideFromLeft {
+    0% {
+        width: 0%;
+    }    
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        width: 100%;
+    }    
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes pulsating {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Navbar */
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.header-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.navbar-scroll {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+}
+
+.header-inner .navbar-logo {
+    color: #fff;
+}
+
+.header-inner .navbar-logo .daniela-navbar {
+    border-bottom: 1.95px solid #fff;
+}
+
+.navbar-scroll .navbar-logo .daniela-navbar {
+    border-bottom: 1.95px solid var(--light-blue);
+    color: var(--primary-purple);
+}
+
+.navbar-scroll .navbar-logo .trueba-navbar {
+    color: var(--light-blue);
+}
+
+.header-inner a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.header-inner ul a:hover {
+    text-shadow: 1px 1px 7px rgba(255, 255, 255, 0.69);
+}
+
+.navbar-scroll a {
+    color: var(--light-blue);
+}
+
+.navbar-scroll ul a:hover {
+    text-shadow: 1px 1px 7px rgba(109, 157, 197, 0.69);
+}
+
+.header-inner .btn-navbar {
+    border-radius: 0;
+    background-color: #fff;
+    border: 2.5px solid var(--light-blue);
+    color: var(--light-blue);
+}
+
+.header-inner .btn-navbar:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+    text-shadow: none;
+}
+
+.header-inner span {
+    font-size: 2.3rem;
+}
+
+/* Hero Section */
+
+.hero {
+    position: relative;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;    
+    background: url(../images/heroSm.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    filter: blur(3px) brightness(.66);
+    transform: scale(1.05);
+}
+
+.hero > div {
+    height: 80vh;
+}
+
+.quote {
+    margin: auto 0px;
+}
+
+.hero .special-heading {
+    color:#fff;
+    text-shadow: 1px 2px 9px rgba(109, 157, 197, 0.93);
+    animation: fade-in 2.75s ease-out;
+}
+
+.special-heading {
+    font-family: 'Anton', sans-serif;
+}
+
+#scroll a{
+    color: #fff;
+}
+
+#scroll i {
+    font-size: 1.7rem;    
+}
+
+.arrow-icon {
+    animation: pulsating 1.55s infinite ease;
+}
+
+/* Section B */
+
+.section-b::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: var(--light-grey);
+}
+
+.section-b i{
+    font-size: 3rem;
+    color: var(--primary-pink);
+}
+
+#different::after {
+    content: "";
+    position: absolute;
+    right: -1%;
+    top: 40%;
+    z-index: -1;
+    height: 55%;
+    width: 95%;
+    background-color: var(--primary-pink);
+}
+
+/* Section C */
+
+.section-c .therapist {
+    background: url(../images/therapistCustomSize.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+/* Section D */
+
+.section-d {
+    background-color: var(--primary-grey);
+}
+
+.section-d h4 {
+    border-bottom: 2.3px solid var(--light-blue);
+}
+
+/* Section Calendly */
+
+.section-calendly .calendly-inline-widget {
+    min-width: 300px;
+    height: 950px;
+}
+
+/* Footer Section */
+
+.footer {
+    background-color: var(--primary-purple);
+    color: #fff;
+}
+
+.footer li {
+    font-size: 1.2rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer a:hover {
+    text-shadow: 1px 2px 9px rgba(109, 157, 197, 0.93);
+}
+
+.footer .footer-logo h3 {
+    color: var(--light-blue);
+}
+
+.footer .footer-logo .daniela {
+    border-bottom: 1.95px solid white;
+    color: #fff;
+}
+
+/* About me Section */
+
+.about-me .profile-pic {
+    background: url(../images/aboutMe.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+}
+
+/* Media Queries */
+
+@media (max-width: 576px) {
+    p {
+        font-size: .9rem;
+    }
+}
+/* Navbar */
+
+@media (max-width: 350px) {
+    .header-inner .btn-navbar {
+        border: 1.5px solid var(--light-blue);
+        font-size: .9rem;
+    }
+}
+
+/* Calendly Section */
+
+@media (min-width: 400px) {
+    .section-calendly .calendly-inline-widget {
+        height: 980px;
+    }
+}
+
+@media (min-width: 700px) {
+    .section-calendly .calendly-inline-widget {
+        height: 1000px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-calendly .calendly-inline-widget {
+        height: 700px;
+    }
+}
+
+/* Footer */
+
+@media (max-width: 576px) {
+    .footer li {
+        font-size: .9rem;
+    }
+}
+
